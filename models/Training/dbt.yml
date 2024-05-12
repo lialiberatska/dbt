@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: dbt
+    database: DBT_DB
+    schema: DBT_YLIBERATSKA
+    tables:
+      - name: employee
+    freshness: 
+          warn_after: {count: 30, period: minute}
+          error_after: {count: 2, period: hour}
+    loaded_at_field: Loaded_DT
